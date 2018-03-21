@@ -9,7 +9,7 @@ words = {car: "a road vehicle, typically with four wheels",
         submarine: "a warship with a streamlined hull designed to operate completely submerged"
       }
 movies = {:titanic => "1997", "fast and furious" => "2001", :avangers => "2012"}
-cities = {:toronto => "9,2 mi", :sao_paulo => "12,04 mi", :tokyo => "9,8 mi"}
+cities = {:toronto => 9200000, :sao_paulo => 12400000, :tokyo => 9800000}
 friends = {:pri => 30, :helder => 29, :shashike => 23}
 
 puts coin
@@ -25,7 +25,7 @@ puts movies[:titanic]
 puts
 puts fav_colours.last
 puts
-cities[:shanghai] = "24,1 mi"
+cities[:shanghai] = 24000000
 puts cities
 puts
 coin=coin.reverse
@@ -64,6 +64,28 @@ puts "rafinha is no longer favourite"
 artist.delete("Rafinha")
 puts "the favourites are", artist
 puts
-cities[:sao_paulo]="10 mi"
+cities[:sao_paulo]=10000000
 puts "new population for São Paulo citie"
 puts cities
+puts
+counter=0
+cities.each do |k,v|
+  counter += v
+end
+puts "the total population of the cities is", counter
+puts
+friends.each do |k,v|
+  if v>25
+    puts "#{k}, is old"
+  else
+    puts "#{k} is young"
+  end
+end
+puts
+puts "printing the last 2 colours", fav_colours.last(2)
+puts
+age.map!{|a| a+1}
+puts "Increasing +1 on each age", age
+puts
+fav_colours.push("black", "white")
+puts "including 2 new colors" ,fav_colours
