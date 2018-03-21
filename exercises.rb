@@ -150,12 +150,79 @@ print countries
 puts
 
 
-
 puts"\n\n\n===================== EXERCISE 7 =====================\n\n\n"
 
-
-
 20.times do
-  puts "I will not skateboard in the halls"
+   puts "I will not skateboard in the halls"
 end
+
 puts
+
+skate = []
+20.times do
+  skate.push("I will not skateboard in the halls")
+end
+print skate
+puts
+
+#one way to do it
+numbers=Array.new(50) {|i| i+1}
+
+print numbers
+puts
+puts
+
+#other way to do it
+num=[]
+
+50.times do |x|
+num.push(x+1)
+end
+print num
+puts
+puts
+
+a=0
+num.each do |x|
+  a += x
+end
+
+print a
+
+puts
+puts
+
+triple=[]
+
+50.times do |x|
+  3.times do
+    triple.push(x+1)
+  end
+end
+
+print triple
+
+puts
+puts
+
+
+countries = [{name: "England", continent: "Europe", island: true}, {name: "Brazil", continent: "South america", island: false}, {name: "Japan", continent: "Asia", island: true}]
+puts
+puts
+
+true_island=[]
+false_island=[]
+
+countries.each do |x|
+  if x[:island] == true
+    true_island.push(x[:name])
+  else
+    false_island.push(x[:name])
+  end
+end
+
+print true_island
+print false_island
+puts
+
+puts"\n\n\n===================== EXERCISE 8 =====================\n\n\n"
