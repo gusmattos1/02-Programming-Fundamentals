@@ -140,11 +140,16 @@ phone=[phone_1, phone_2, phone_3, phone_4]
 print "New array for Phone\n", phone
 puts
 
-country_1 = {name: "England", continent: "Europe", island: true}
-country_2 = {name: "Brazil", continent: "South america", island: false}
-country_3 = {name: "Japan", continent: "Asia", island: true}
+#one way
+countries = [{name: "England", continent: "Europe", island: true}, {name: "Brazil", continent: "South america", island: false}, {name: "Japan", continent: "Asia", island: true}]
 
-countries = [country_1, country_2, country_3]
+
+# other way
+# country_1 = {name: "England", continent: "Europe", island: true}
+# country_2 = {name: "Brazil", continent: "South america", island: false}
+# country_3 = {name: "Japan", continent: "Asia", island: true}
+#
+# countries = [country_1, country_2, country_3]
 puts
 print countries
 puts
@@ -166,11 +171,11 @@ print skate
 puts
 
 #one way to do it
-numbers=Array.new(50) {|i| i+1}
-
-print numbers
-puts
-puts
+# numbers=Array.new(50) {|i| i+1}
+#
+# print numbers
+# puts
+# puts
 
 #other way to do it
 num=[]
@@ -179,6 +184,7 @@ num=[]
 num.push(x+1)
 end
 print num
+
 puts
 puts
 
@@ -207,6 +213,8 @@ puts
 
 
 countries = [{name: "England", continent: "Europe", island: true}, {name: "Brazil", continent: "South america", island: false}, {name: "Japan", continent: "Asia", island: true}]
+
+
 puts
 puts
 
@@ -223,6 +231,124 @@ end
 
 print true_island
 print false_island
-puts
+
 
 puts"\n\n\n===================== EXERCISE 8 =====================\n\n\n"
+
+
+expenses=[123, 435.12, 90, 12.50, 10]
+
+print expenses
+
+puts
+puts
+
+total_expenses=0
+
+expenses.each do |x|
+  total_expenses += x
+end
+
+puts "\n\ntotal expenses\n", total_expenses, "\n\n"
+
+
+def soma (num)
+  total_expenses=0
+
+  num.each do |x|
+    total_expenses += x
+  end
+  return total_expenses
+end
+
+puts "\n\n",soma(expenses), "\n\n"
+expenses_2 = [12312, 123123,2452, 674567,14123,123.123123123]
+
+puts "\n\n",soma(expenses_2)
+
+puts"\n\n\n===================== EXERCISE 9 =====================\n\n\n"
+
+#list
+grocery_list = ["meat", "vegetables", "candys", "paper"]
+
+#how to print the list with a * on front
+grocery_list.each do |x|
+  puts "* #{x}"
+end
+
+
+puts "\n\n add rice\n\n"
+
+#add rice on the list
+grocery_list.push("rice")
+
+puts
+puts
+
+#method to print the list with * on front of each item
+
+def display(x)
+  x.each do |x|
+    puts "* #{x}"
+  end
+end
+
+puts
+puts
+
+display(grocery_list)
+
+puts
+puts
+
+#print how many items are on the list
+print "we have a total of ",grocery_list.length, " items on the list."
+
+puts
+puts
+
+#method to add items on the list
+def additem (list, item)
+  list.push (item)
+end
+
+puts
+puts
+
+puts "including banana on the list"
+additem(grocery_list, "banana")
+
+#printing the list using the method
+display(grocery_list)
+
+
+puts
+puts
+
+puts "checking if banana is inclued on the list\n\n"
+def checkbananas (x)
+  if x.include?("banana") == true
+    puts "You don't need to pick up bananas today\n\n"
+  else
+    puts "You need to pick up bananas\n\n"
+  end
+end
+
+checkbananas(grocery_list)
+
+puts "sorting the list"
+def displaysort(x)
+    display(x.sort!)
+end
+
+displaysort(grocery_list)
+
+puts
+puts "removing candys from the list"
+
+def removelist(list, item)
+  list.delete(item)
+  display(list)
+end
+
+removelist(grocery_list, "candys")
