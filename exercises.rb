@@ -211,9 +211,9 @@ print triple
 puts
 puts
 
-
-countries = [{name: "England", continent: "Europe", island: true}, {name: "Brazil", continent: "South america", island: false}, {name: "Japan", continent: "Asia", island: true}]
-
+# 
+# countries = [{name: "England", continent: "Europe", island: true}, {name: "Brazil", continent: "South america", island: false}, {name: "Japan", continent: "Asia", island: true}]
+#
 
 puts
 puts
@@ -326,17 +326,19 @@ puts
 puts
 
 puts "checking if banana is inclued on the list\n\n"
-def checkbananas (x)
-  if x.include?("banana") == true
-    puts "You don't need to pick up bananas today\n\n"
+#method to check if items are on the list
+def checkitem (list, item)
+  if list.include?(item) == true
+    puts "You don't need to pick up #{item}\n\n"
   else
-    puts "You need to pick up bananas\n\n"
+    puts "You need to pick up #{item}\n\n"
   end
 end
 
-checkbananas(grocery_list)
+checkitem(grocery_list, "banana")
 
 puts "sorting the list"
+#method to sort the list
 def displaysort(x)
     display(x.sort!)
 end
@@ -346,9 +348,11 @@ displaysort(grocery_list)
 puts
 puts "removing candys from the list"
 
+#method to remove items from the list
 def removelist(list, item)
   list.delete(item)
   display(list)
 end
 
+#runing the method to remove items
 removelist(grocery_list, "candys")
